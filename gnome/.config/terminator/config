@@ -1,0 +1,22 @@
+[global_config]
+[keybindings]
+[profiles]
+  [[default]]
+    use_system_font = False
+    background_image = None
+    background_darkness = 0.87
+    scrollback_lines = 5000
+    active_encodings = ANSI_X3.4-1968, UTF-8, ISO-8859-1
+    split_to_group = True
+    foreground_color = "#dfdfdf"
+    font = DejaVu Sans Mono for Powerline 10
+    background_color = "#1d1d1d"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

@@ -1,0 +1,8 @@
+[
+    { "keys": ["ctrl+shift+x"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
+    { "keys": ["alt+enter"], "command": "run_macro_file", "args": {"file": "Packages/User/EndLineColon.sublime-macro"} },
+    { "keys": ["alt+,"], "command": "run_macro_file", "args": {"file": "Packages/User/ListComma.sublime-macro"} },
+    { "keys": ["alt+["], "command": "run_macro_file", "args": {"file": "Packages/User/NewDictBracket.sublime-macro"} },
+    { "keys": ["alt+="], "command": "run_macro_file", "args": {"file": "Packages/User/EndLineEqual.sublime-macro"} },
+	{ "keys": ["ctrl+shift+y"], "command": "surround_selection"}
+]

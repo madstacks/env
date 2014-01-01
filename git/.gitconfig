@@ -1,0 +1,18 @@
+[push]
+	default = simple
+[gui]
+	fontdiff = -family \"DejaVu Sans Mono\" -size -12 -weight normal -slant roman -underline 0 -overstrike 0
+    commitmsgwidth = 70
+[merge]
+    summary = true
+    tool = "p4merge"
+[alias]
+    pullup = pull upstream master
+    pushup = push upstream master
+    d = branch -D
+    tagup = push --tags upstream
+    s = status -sb
+[color]
+	ui = true
+[core]
+	editor = vim

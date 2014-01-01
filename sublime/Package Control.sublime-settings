@@ -1,0 +1,19 @@
+{
+	"installed_packages":
+	[
+		"FileHeader",
+		"GitGutter",
+		"Jinja2",
+		"JSONLint",
+		"OmniMarkupPreviewer",
+		"Package Control",
+		"Restructured Text (RST) Snippets",
+		"RestructuredText Improved",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeREPL",
+		"Surround",
+		"Theme - Soda",
+		"TrailingSpaces"
+	]
+}
