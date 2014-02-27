@@ -27,7 +27,7 @@ source $HOME/.git-completion.sh
 source $HOME/.ps1-git-prompt.sh
 source /usr/share/autojump/autojump.sh
 
-PATH=$PATH:~/apps/p4merge/bin
+PATH=$PATH:~/apps/p4merge/bin:/opt/sublime_text
 export PATH
 
 alias grep='grep --color=auto'
@@ -40,12 +40,11 @@ alias root='sudo su -'
 alias pfind='ps -aef | grep $@'
 alias rd='rm -rf'
 alias mkv3='mkvirtualenv -p /usr/bin/python3'
-alias sub='sublime-text'
+alias sub='sublime_text'
 alias ssh='ssh -A'
 
-eval `keychain --env /etc/profile.d/openssh.sh --eval --agents ssh id_rsa id_crt`
-
-workon gk
+#eval `keychain --env /etc/profile.d/openssh.sh --eval --agents ssh id_rsa id_crt`
+eval `keychain --eval --agents ssh id_rsa`
 
 
 # ssh known_hosts deletion helper
