@@ -33,7 +33,7 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 mkdir -p ~/.vim/colors
 wget -O ~/.vim/colors/wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 
-mkdir ~/.virtualenvs ~/.themes
+mkdir ~/.virtualenvs ~/.themes ~/Apps ~/dev
 
 # Run additional environment specific setup script
 if [ -f $EXTRA_SETUP ]; then

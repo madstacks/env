@@ -43,10 +43,10 @@ alias mkv3='mkvirtualenv -p /usr/bin/python3'
 alias sub='sublime_text'
 alias ssh='ssh -A'
 alias gg='git gui &'
+alias runps='sudo service postgresql start'
 
 #eval `keychain --env /etc/profile.d/openssh.sh --eval --agents ssh id_rsa id_crt`
 eval `keychain --eval --agents ssh id_rsa`
-
 
 # ssh known_hosts deletion helper
 sdk()
