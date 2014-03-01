@@ -42,8 +42,10 @@ alias rd='rm -rf'
 alias mkv3='mkvirtualenv -p /usr/bin/python3'
 alias sub='sublime_text'
 alias ssh='ssh -A'
+alias gg='git gui &'
 
 #eval `keychain --env /etc/profile.d/openssh.sh --eval --agents ssh id_rsa id_crt`
+pkill ssh-agent
 eval `keychain --eval --agents ssh id_rsa`
 
 

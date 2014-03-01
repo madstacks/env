@@ -16,3 +16,6 @@
 	ui = true
 [core]
 	editor = vim
+[user]
+	name = Daniel
+	email = madstacks@users.noreply.github.com

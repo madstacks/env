@@ -1,14 +1,9 @@
 #!/bin/bash
 
-# Install packages
-sudo apt-get install -y keepassx git git-gui terminator python-pip autojump screen gnome-tweak-tool
-sudo apt-get install -y keychain nemo unity-tweak-tool build-essential realpath jq curl
-sudo apt-get install -y python-dev python3-dev
-sudo apt-get install -y openssh-server vim traceroute tmux vlc
+EXTRA_SETUP="./extras/install.sh"
+CODENAME=$(lsb_release -cs)
 
-sudo pip install virtualenvwrapper
-
-# Set 3rd party repos
+# Setup 3rd party repos
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
 sudo add-apt-repository -y ppa:moka/moka-icon-theme
@@ -16,22 +11,31 @@ sudo add-apt-repository -y ppa:moka/faba-icon-theme
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
 sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add - 
-sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian saucy contrib" >> /etc/apt/sources.list.d/virtualbox.list'
-sudo apt-get update
+sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian ${CODENAME} contrib" >> /etc/apt/sources.list.d/virtualbox.list'
 
-# Install extra packages
-sudo apt-get install -y oracle-java7-installer oracle-java7-set-default google-chrome-stable
-sudo apt-get install -y virtualbox-4.3 dkms sublime-text-installer moka-icon-theme
-sudo apt-get install -y faba-icon-theme faba-icon-theme-symbolic faba-mono-icons faba-colors
+echo "Running apt-get update"
+sudo apt-get update -qq
 
+# Install packages
+sudo apt-get install -y keepassx git git-gui terminator python-pip autojump keychain nemo unity-tweak-tool \
+	build-essential realpath jq curl python-dev python3-dev tig gtk2-engines-murrine gtk2-engines-pixbuf \
+	openssh-server vim traceroute tmux cifs-utils ffmpegthumbnailer oracle-java7-installer oracle-java7-set-default \
+	google-chrome-stable virtualbox-4.3 dkms sublime-text-installer moka-icon-theme faba-icon-theme \
+	faba-icon-theme-symbolic faba-mono-icons faba-colors
+
+sudo pip install virtualenvwrapper
+
+# Setup symlinks
 ./symlinks.py
 
-mkdir ~/apps
-cd ~/apps
+# VIM setup
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+mkdir -p ~/.vim/colors
+wget -O ~/.vim/colors/wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 
-git clone https://github.com/micha/resty.git
-git clone https://github.com/royrusso/elasticsearch-HQ.git
-git clone git://github.com/mobz/elasticsearch-head.git
+mkdir ~/.virtualenvs ~/.themes
 
-cd ~
-mkdir ~/.virtualenvs
+# Run additional environment specific setup script
+if [ -f $EXTRA_SETUP ]; then
+	source $EXTRA_SETUP
+fi
