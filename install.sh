@@ -21,7 +21,7 @@ sudo apt-get install -y keepassx git git-gui terminator python-pip autojump keyc
 	build-essential realpath jq curl python-dev python3-dev tig gtk2-engines-murrine gtk2-engines-pixbuf \
 	openssh-server vim traceroute tmux cifs-utils ffmpegthumbnailer oracle-java7-installer oracle-java7-set-default \
 	google-chrome-stable virtualbox-4.3 dkms sublime-text-installer moka-icon-theme faba-icon-theme \
-	faba-icon-theme-symbolic faba-mono-icons faba-colors
+	faba-icon-theme-symbolic faba-mono-icons faba-colors dconf-editor ipython
 
 sudo pip install virtualenvwrapper
 
