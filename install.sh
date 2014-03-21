@@ -28,7 +28,10 @@ sudo pip install virtualenvwrapper  || exit 1
 ./symlinks.py
 
 # VIM setup
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+if [ ! -d ~/.vim/bundle/vundle ]; then
+	git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+fi
+
 mkdir -p ~/.vim/colors
 wget -O ~/.vim/colors/wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 
