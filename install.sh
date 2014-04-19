@@ -20,7 +20,7 @@ sudo apt-get install -y keepassx git git-gui terminator python-pip autojump keyc
 	build-essential realpath jq curl python-dev python3-dev tig gtk2-engines-murrine gtk2-engines-pixbuf \
 	openssh-server vim traceroute tmux cifs-utils ffmpegthumbnailer oracle-java7-installer oracle-java7-set-default \
 	google-chrome-stable virtualbox-4.3 dkms sublime-text-installer moka-icon-theme faba-icon-theme \
-	faba-icon-theme-symbolic faba-mono-icons faba-colors dconf-editor ipython || exit 1
+	faba-icon-theme-symbolic faba-mono-icons faba-colors dconf-editor ipython pinta|| exit 1
 
 sudo pip install virtualenvwrapper  || exit 1
 
@@ -37,7 +37,21 @@ wget -O ~/.vim/colors/wombat256mod.vim http://www.vim.org/scripts/download_scrip
 
 mkdir -p ~/.virtualenvs ~/.themes ~/Apps ~/dev
 
+# dconf settings
+gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
+gsettings set com.canonical.Unity.Lenses home-lens-default-view "['applications.scope', 'applications-applications.scope']"
+gsettings set com.canonical.Unity.Lenses remote-content-search "none"
+gsettings set com.canonical.Unity.ApplicationsLens display-available-apps "false"
+gsettings set org.gnome.nautilus.desktop home-icon-visible "true"
+gsettings set org.gnome.nautilus.desktop trash-icon-visible "true"
+gsettings set org.gnome.nautilus.preferences show-image-thumbnails "always"
+gsettings set com.canonical.indicator.datetime show-date "true"
+gsettings set com.canonical.indicator.datetime show-day "true"
+gsettings set com.canonical.indicator.bluetooth visible "false"
+
 # Run additional environment specific setup script
 if [ -f $EXTRA_SETUP ]; then
-	source $EXTRA_SETUP
+	pushd ./extras
+	./install.sh
+	popd
 fi
