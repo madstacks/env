@@ -61,7 +61,6 @@ fi
 # this file can be found normally in git-core under /usr/share/git-core/contrib/completion/
 # Ubuntu has it automatically sourced in 
 
-source ~/.git-prompt.sh
 #GIT_PS1_SHOWUPSTREAM="verbose git"
 # GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWCOLORHINTS=true

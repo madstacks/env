@@ -1,0 +1,29 @@
+[push]
+    default = simple
+[gui]
+    fontdiff = -family \"DejaVu Sans Mono\" -size -12 -weight normal -slant roman -underline 0 -overstrike 0
+    commitmsgwidth = 70
+[merge]
+    summary = true
+    tool = "p4merge"
+[mergetool "p4merge"]
+    cmd = ~/apps/p4merge/bin/p4merge \
+           "$PWD/$BASE" \
+           "$PWD/$LOCAL" \
+           "$PWD/$REMOTE" \
+           "$PWD/$MERGED"
+    keepBackup = false
+    trustExitCode = false
+[alias]
+    pullup = pull upstream master
+    pushup = push upstream master
+    d = branch -D
+    tagup = push --tags upstream
+    s = status -sb
+    lg = log -t --color --decorate --graph --oneline --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %C(bold blue) %an %Creset%Cgreen(%cr)%Creset %s'  --date=relative --branches
+[color]
+    ui = true
+[core]
+    editor = vim
+[include]
+    path = .gitconfig.local

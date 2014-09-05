@@ -15,22 +15,22 @@ def linkMap(linkinput, srcinput):
     return (linktarget, linksource)
 
 configs = [
-    linkMap('.gitconfig', 'git/.gitconfig'),
-    linkMap('.vimrc', 'vim/.vimrc'),
-    linkMap('.bashrc', 'bash/.bashrc'),
-    linkMap('.git-completion.sh', 'bash/git-completion.sh'),
-    linkMap('.git-prompt.sh', 'bash/git-prompt.sh'),
-    linkMap('.ps1-git-prompt.sh', 'bash/ps1-git-prompt.sh'),
+    linkMap('.gitconfig', 'git/gitconfig'),
+    linkMap('.vimrc', 'vim/vimrc'),
+    linkMap('.bash', 'bash'),
+    linkMap('.bashrc', 'bash/bashrc'),
+    linkMap('.ansible.cfg', 'ansible/ansible.cfg'),
+    linkMap('.tmux.conf', 'tmux/tmux.conf'),
 ]
 
 for link, source in configs:
     if os.path.isfile(link) and not os.path.islink(link):
-        print '{} already exists and is not a symlink.  Backing up to {}.bak'.format(link, link)
+        print('{} already exists and is not a symlink.  Backing up to {}.bak'.format(link, link))
         os.rename(link, link + '.bak')
     elif os.path.islink(link):
         pass
     try:
         os.symlink(source, link)
-        print 'Creating symlink: {} -> {}'.format(link, source)
+        print('Creating symlink: {} -> {}'.format(link, source))
     except OSError as e:
-        print '{} already exists and is a symlink. Skipping'.format(link)
+        print('{} already exists and is a symlink. Skipping'.format(link))
