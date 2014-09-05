@@ -39,7 +39,9 @@ sudo apt-get install -y software-properties-common git git-gui terminator python
 sudo pip install virtualenvwrapper ansible || exit 1
 
 # Misc Stuff
-git clone https://github.com/micha/resty.git ~/apps/resty
+if [ ! -d ~/apps/resty ]; then
+    git clone https://github.com/micha/resty.git ~/apps/resty
+fi
 
 ##############################################
 # Setup Symlinks
