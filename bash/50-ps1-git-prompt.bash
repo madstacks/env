@@ -51,7 +51,7 @@ else
     MAGENTA="\033[1;31m"
     ORANGE="\033[1;33m"
     GREEN="\033[1;32m"
-    LIGHTGREEN="\033[1;32m"
+    LIGHTGREEN="\[\033[1;32m\]"
     PURPLE="\033[1;35m"
     WHITE="\033[1;37m"
     BOLD=""
@@ -74,9 +74,9 @@ if [ $? -eq 0 ]; then \
   echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
   if [ "$?" -eq "0" ]; then \
     # Clean repository - nothing to commit
-    echo "'$LIGHTGREEN'$(__git_ps1 "[%s]") "; \
+    echo "\['$LIGHTGREEN'\]$(__git_ps1 "[%s]") "; \
   else \
     # Changes to working tree
-    echo "'$RED'$(__git_ps1 "[%s]") "; \
+    echo "\['$RED'\]$(__git_ps1 "[%s]") "; \
   fi)";\
 fi)> \[$RESET\]'
