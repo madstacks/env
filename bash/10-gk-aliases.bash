@@ -1,1 +1,0 @@
-/home/dformel/dev/dfenv/bash/10-gk-aliases.bash

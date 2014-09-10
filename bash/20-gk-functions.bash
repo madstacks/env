@@ -1,1 +1,0 @@
-/home/dformel/dev/dfenv/bash/20-gk-functions.bash

@@ -1,1 +1,0 @@
-/home/dformel/dev/dfenv/bash/90-gk-misc.bash
