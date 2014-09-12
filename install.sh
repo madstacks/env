@@ -36,7 +36,7 @@ sudo apt-get install -y software-properties-common git git-gui terminator python
     faba-colors dconf-editor ipython pinta tree || exit 1
 
 # Python Stuff
-sudo pip install virtualenvwrapper ansible || exit 1
+sudo pip install virtualenvwrapper ansible powerline-status || exit 1
 
 # Misc Stuff
 if [ ! -d ~/apps/resty ]; then
@@ -71,6 +71,15 @@ gsettings set org.gnome.nautilus.preferences show-image-thumbnails "always"
 gsettings set com.canonical.indicator.datetime show-date "true"
 gsettings set com.canonical.indicator.datetime show-day "true"
 gsettings set com.canonical.indicator.bluetooth visible "false"
+
+##############################################
+# Powerline Setup
+##############################################
+wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
+wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+sudo mv PowerlineSymbols.otf /usr/share/fonts/
+sudo fc-cache -vf
+sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
 
 ##############################################
 # Run environment specific setup script

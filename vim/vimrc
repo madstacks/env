@@ -10,7 +10,6 @@ call vundle#rc()
 
 " let Vundle manage Vundle - required!
 Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 filetype plugin indent on
 
@@ -26,8 +25,7 @@ augroup vimrc_autocmds
 augroup END
 
 " Powerline setup
-" Need to setup fonts - https://github.com/Lokaltog/powerline-fonts
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 set laststatus=2
 
 " Use <leader>l to toggle display of whitespace
