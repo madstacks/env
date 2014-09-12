@@ -36,7 +36,7 @@ sudo apt-get install -y software-properties-common git git-gui terminator python
     faba-colors dconf-editor ipython pinta tree || exit 1
 
 # Python Stuff
-sudo pip install virtualenvwrapper ansible powerline-status || exit 1
+sudo pip install virtualenvwrapper ansible || exit 1
 
 # Misc Stuff
 if [ ! -d ~/apps/resty ]; then
@@ -74,7 +74,9 @@ gsettings set com.canonical.indicator.bluetooth visible "false"
 
 ##############################################
 # Powerline Setup
+# Installs to /usr/local/lib/python2.7/dist-packages/powerline
 ##############################################
+sudo pip install powerline-status 
 wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
 wget https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
 sudo mv PowerlineSymbols.otf /usr/share/fonts/
