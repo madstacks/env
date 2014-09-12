@@ -1,0 +1,21 @@
+{
+	"default_module": "powerline.segments.common",
+	"segments": {
+		"right": [
+			{
+				"function": "date"
+			},
+			{
+				"function": "date",
+				"name": "time",
+				"args": {
+					"format": "%H:%M",
+					"istime": true
+				}
+			},
+			{
+				"function": "hostname"
+			}
+		]
+	}
+}
