@@ -17,6 +17,17 @@ function putkey() {
 
 # delete a local and remote git branch
 function rmbranch() {
+    if ! $(git branch -a --list | grep -q "$1"); then
+        echo "Branch $1 does not exist"
+        return
+    fi
+    if ! $(git branch --merged | grep -q "$1"); then
+        echo "$1 has not been merged to master yet"
+        read -r -p "Are you sure you want to delete it? [y/N] " response
+        if [[ ! "${response,,}" =~ ^(yes|y)$ ]]; then
+            return
+        fi
+    fi
     git branch -D $1 && git push origin :$1
 }
 

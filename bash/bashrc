@@ -14,6 +14,9 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
+# Disable CTRL+S
+stty -ixon
+
 export LANG=en_US.utf8
 export EDITOR=vim
 
