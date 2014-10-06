@@ -1,6 +1,6 @@
 # Define some colors.
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]]  && infocmp gnome-256color >/dev/null 2>&1; then 
-    TERM=gnome-256color; 
+    TERM=xterm-256color;
 fi
 
 # Color chart: http://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg
