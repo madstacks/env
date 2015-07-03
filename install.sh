@@ -13,8 +13,6 @@ mkdir -p ~/.virtualenvs ~/.themes ~/apps ~/dev
 # Setup 3rd party repos
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
-sudo add-apt-repository -y ppa:moka/moka-icon-theme
-sudo add-apt-repository -y ppa:moka/faba-icon-theme
 
 # Chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -32,8 +30,7 @@ sudo apt-get install -y software-properties-common git git-gui terminator python
     nemo unity-tweak-tool build-essential realpath jq curl python-dev python3-dev tig gtk2-engines-murrine \
     gtk2-engines-pixbuf openssh-server vim traceroute tmux cifs-utils ffmpegthumbnailer \
     oracle-java7-installer oracle-java7-set-default google-chrome-stable virtualbox-4.3 dkms \
-    sublime-text-installer moka-icon-theme faba-icon-theme faba-icon-theme-symbolic faba-mono-icons \
-    faba-colors dconf-editor ipython pinta tree || exit 1
+    sublime-text-installer dconf-editor ipython pinta tree || exit 1
 
 # Python Stuff
 sudo pip install virtualenvwrapper ansible || exit 1

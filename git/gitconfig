@@ -27,3 +27,6 @@
     editor = vim
 [include]
     path = .gitconfig.local
+[user]
+    name = madstacks
+    email = madstacks@users.noreply.github.com
