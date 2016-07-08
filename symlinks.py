@@ -16,12 +16,10 @@ def linkMap(linkinput, srcinput):
 
 configs = [
     linkMap('.gitconfig', 'git/gitconfig'),
-    linkMap('.vimrc', 'vim/vimrc'),
     linkMap('.bash', 'bash'),
     linkMap('.bashrc', 'bash/bashrc'),
     linkMap('.ansible.cfg', 'ansible/ansible.cfg'),
     linkMap('.tmux.conf', 'tmux/tmux.conf'),
-    linkMap('.config/powerline', 'powerline'),
 ]
 
 for link, source in configs:

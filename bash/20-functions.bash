@@ -45,12 +45,12 @@ function gtag() {
 # Host * !*github* !*bitbucket*
 #     PermitLocalCommand yes
 #     LocalCommand if [[ "$TERM" == screen* && "%r" != "git" ]]; then printf "\033k%h\033\\"; fi
-function ssh() {
-    local current_name=$(tmux display-message -p '#W')
-    local ssh_bin=$(which ssh)
-    $ssh_bin "$@"
-    [[ -n "$TMUX" ]] && tmux rename-window $current_name
-}
+# function ssh() {
+#     local current_name=$(tmux display-message -p '#W')
+#     local ssh_bin=$(which ssh)
+#     $ssh_bin "$@"
+#     [[ -n "$TMUX" ]] && tmux rename-window $current_name
+# }
 
 function s() {
     ssh "$@"

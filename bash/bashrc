@@ -21,15 +21,11 @@ export LANG=en_US.utf8
 export EDITOR=vim
 
 # python virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
+export WORKON_HOME=$HOME/virtualenvs
 export PROJECT_HOME=$HOME/dev
 source /usr/local/bin/virtualenvwrapper.sh
 
-source $HOME/apps/resty/resty
 source /usr/share/autojump/autojump.sh
-
-PATH=$PATH:~/apps/p4merge/bin:/opt/sublime_text
-export PATH
 
 if [[ -f $HOME/.ssh/id_crt ]]; then
     eval `keychain --env /etc/profile.d/openssh.sh --eval --agents ssh id_rsa id_crt`
