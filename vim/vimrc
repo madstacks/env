@@ -4,12 +4,6 @@
 set nocompatible
 filetype off
 
-" Vundle - https://github.com/gmarik/vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle - required!
-Bundle 'gmarik/vundle'
 
 filetype plugin indent on
 
@@ -24,9 +18,6 @@ augroup vimrc_autocmds
     autocmd FileType python set nowrap
 augroup END
 
-" Powerline setup
-set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
-set laststatus=2
 
 " Use <leader>l to toggle display of whitespace
 nmap <leader>l :set list!<CR>
@@ -56,16 +47,7 @@ noremap <Leader>Q :qa!<CR> " Quit all windows
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertLeave * match ExtraWhitespace /\s\+$/
 
-" Color scheme
-" mkdir -p ~/.vim/colors && cd ~/.vim/colors
-" wget -O wombat256mod.vim
-" http://www.vim.org/scripts/download_script.php?src_id=13400
-set t_Co=256
-color wombat256mod
 
-" Color line for max width of file
-set colorcolumn=120
-highlight ColorColumn ctermbg=233
 
 " easier moving between tabs
 map <Leader>n <esc>:tabprevious<CR>
@@ -73,20 +55,3 @@ map <Leader>m <esc>:tabnext<CR>
 
 " Disable auto comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" History
-set history=50
-set undolevels=500
-
-" Case Insensitive Search
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-
-" Tabs
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set shiftround
-set expandtab
